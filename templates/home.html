@@ -1,0 +1,1329 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home | Clinic Name{% endblock %}
+
+{% block content %}
+
+<!-- =========================================
+     HERO SECTION
+========================================= -->
+
+<section class="hero-section relative overflow-hidden">
+
+    <div id="hero-slider"
+         class="flex transition-transform duration-700 ease-in-out">
+
+        <!-- SLIDE 1 -->
+
+        <div class="min-w-full relative overflow-hidden
+            bg-gradient-to-br from-blue-900 via-blue-700 to-cyan-600
+            text-white">
+
+            <div class="hero-orb hero-orb-one"></div>
+            <div class="hero-orb hero-orb-two"></div>
+
+            <div class="relative container mx-auto px-6
+                py-24 md:py-36 text-center">
+
+                <div class="hero-content max-w-4xl mx-auto">
+
+                    <span class="hero-badge">
+                        <span>✦</span>
+                        Welcome to Shivansh Clinic
+                    </span>
+
+                    <h1 class="text-4xl sm:text-5xl
+                        md:text-6xl lg:text-7xl
+                        font-extrabold leading-tight
+                        tracking-tight mt-6 mb-6">
+
+                        Compassionate Care.
+                        <br>
+
+                        <span class="text-cyan-200">
+                            With Dr. Kapil Sharma
+                        </span>
+
+                    </h1>
+
+                    <p class="text-lg md:text-xl
+                        text-blue-100 max-w-2xl
+                        mx-auto leading-relaxed mb-10">
+
+                        Quality healthcare and personalized
+                        medical attention by
+                        <strong>Dr. Kapil Sharma (B.A.M.S)</strong>,
+                        General Physician.
+
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row
+                        justify-center items-center gap-4">
+
+                        <a href="{% url 'appointment' %}"
+                           class="hero-primary-btn">
+
+                            Book Appointment
+                            <span>→</span>
+
+                        </a>
+
+                        <a href="{% url 'about' %}"
+                           class="hero-secondary-btn">
+
+                            Explore Shivansh Clinic
+                            <span>↗</span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SLIDE 2 -->
+
+        <div class="min-w-full relative overflow-hidden
+            bg-slate-950 text-white">
+
+            <div class="absolute inset-0">
+
+                <img src="{% static 'images/doctor.jpg' %}"
+                     alt="Dr. Kapil Sharma - Shivansh Clinic"
+                     class="w-full h-full object-cover">
+
+                <div class="absolute inset-0
+                    bg-gradient-to-r from-slate-950/90
+                    via-blue-950/65 to-blue-900/30">
+                </div>
+
+            </div>
+
+            <div class="relative container mx-auto px-6
+                py-24 md:py-36 text-center">
+
+                <div class="hero-content max-w-4xl mx-auto">
+
+                    <span class="hero-badge">
+                        <span>✦</span>
+                        Meet Your Physician
+                    </span>
+
+                    <h2 class="text-4xl sm:text-5xl
+                        md:text-6xl font-extrabold
+                        leading-tight mt-6 mb-6">
+
+                        Meet
+                        <br>
+
+                        <span class="text-cyan-200">
+                            Dr. Kapil Sharma
+                        </span>
+
+                    </h2>
+
+                    <p class="text-lg md:text-xl
+                        text-blue-100 mb-10">
+
+                        B.A.M.S • General Physician
+                        <br>
+                        Trusted Care at Shivansh Clinic
+
+                    </p>
+
+                    <a href="{% url 'appointment' %}"
+                       class="hero-primary-btn">
+
+                        Book Appointment
+                        <span>→</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SLIDE 3 -->
+
+        <div class="min-w-full relative overflow-hidden
+            bg-gradient-to-br from-blue-950
+            via-blue-800 to-cyan-600 text-white">
+
+            <div class="hero-orb hero-orb-two"></div>
+            <div class="hero-orb hero-orb-three"></div>
+
+            <div class="relative container mx-auto px-6
+                py-24 md:py-36 text-center">
+
+                <div class="hero-content max-w-4xl mx-auto">
+
+                    <span class="hero-badge">
+                        <span>✦</span>
+                        Shivansh Clinic
+                    </span>
+
+                    <h2 class="text-4xl sm:text-5xl
+                        md:text-6xl font-extrabold
+                        leading-tight mt-6 mb-6">
+
+                        Your Health,
+                        <br>
+
+                        <span class="text-cyan-200">
+                            Dr. Kapil Sharma's Priority
+                        </span>
+
+                    </h2>
+
+                    <p class="text-lg md:text-xl
+                        text-blue-100 max-w-2xl
+                        mx-auto mb-10">
+
+                        Personalized healthcare with
+                        compassion and attention at
+                        <strong>Shivansh Clinic</strong>.
+
+                    </p>
+
+                    <a href="{% url 'appointment' %}"
+                       class="hero-primary-btn">
+
+                        Book Appointment
+                        <span>→</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Slider Navigation -->
+
+    <button id="hero-prev"
+            type="button"
+            aria-label="Previous slide"
+            class="hero-arrow hero-arrow-left">
+
+        ←
+
+    </button>
+
+    <button id="hero-next"
+            type="button"
+            aria-label="Next slide"
+            class="hero-arrow hero-arrow-right">
+
+        →
+
+    </button>
+
+
+    <!-- Slider Dots -->
+
+    <div class="absolute bottom-7 left-1/2
+        -translate-x-1/2 flex gap-3 z-20">
+
+        <button type="button"
+                aria-label="Go to slide 1"
+                aria-current="true"
+                class="hero-dot active"
+                data-index="0">
+        </button>
+
+        <button type="button"
+                aria-label="Go to slide 2"
+                class="hero-dot"
+                data-index="1">
+        </button>
+
+        <button type="button"
+                aria-label="Go to slide 3"
+                class="hero-dot"
+                data-index="2">
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     ABOUT DOCTOR SECTION
+========================================= -->
+
+<section class="about-section relative overflow-hidden
+    bg-white py-20 md:py-28">
+
+    <div class="about-decoration"></div>
+
+    <div class="relative container mx-auto px-6">
+
+        <div class="grid md:grid-cols-2 gap-12
+            lg:gap-20 items-center">
+
+
+            <!-- CONTENT -->
+
+            <div class="reveal">
+
+                <span class="section-badge">
+                    <span>✦</span>
+                    About Dr. Kapil Sharma
+                </span>
+
+                <h2 class="text-3xl sm:text-4xl
+                    md:text-5xl font-extrabold
+                    text-slate-900 leading-tight
+                    mt-5 mb-6">
+
+                    Healthcare With
+                    <span class="text-blue-600">
+                        Compassion
+                    </span>
+
+                </h2>
+
+                <p class="text-gray-600 text-lg
+                    leading-relaxed mb-5">
+
+                    <strong class="text-slate-900">
+                        Dr. Kapil Sharma (B.A.M.S)
+                    </strong>
+                    is a General Physician at
+                    <strong class="text-blue-600">
+                        Shivansh Clinic
+                    </strong>,
+                    dedicated to providing quality medical
+                    care with a personal and compassionate
+                    approach.
+
+                </p>
+
+                <p class="text-gray-500 leading-relaxed mb-8">
+
+                    At Shivansh Clinic, we focus on creating
+                    a comfortable environment where patients
+                    feel heard, respected, and cared for by
+                    Dr. Kapil Sharma.
+
+                </p>
+
+
+                <!-- FEATURE ITEMS -->
+
+                <div class="grid sm:grid-cols-2 gap-5 mb-9">
+
+                    <div class="feature-item">
+
+                        <div class="feature-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <h3 class="font-bold text-slate-800">
+                                Patient-Centered Care
+                            </h3>
+
+                            <p class="text-sm text-gray-500 mt-1">
+                                Personalized attention by
+                                Dr. Kapil Sharma.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature-item">
+
+                        <div class="feature-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <h3 class="font-bold text-slate-800">
+                                Caring Approach
+                            </h3>
+
+                            <p class="text-sm text-gray-500 mt-1">
+                                Comfortable healthcare at
+                                Shivansh Clinic.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <a href="{% url 'about' %}"
+                   class="modern-primary-btn">
+
+                    Discover More About Dr. Sharma
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+
+            <!-- IMAGE -->
+
+            <div class="reveal delay-200 relative">
+
+                <div class="about-dots"></div>
+
+                <div class="doctor-image-wrapper">
+
+                    <img src="{% static 'images/doctor.jpg' %}"
+                         alt="Dr. Kapil Sharma - Shivansh Clinic"
+                         class="w-full h-full object-cover">
+
+                </div>
+
+
+                <!-- FLOATING CARD -->
+
+                <div class="doctor-floating-card">
+
+                    <div class="flex items-center gap-3">
+
+                        <div class="floating-check">
+                            ✓
+                        </div>
+
+                        <div>
+                            <p class="text-xs text-gray-500">
+                                Shivansh Clinic
+                            </p>
+
+                            <h3 class="font-bold text-slate-800">
+                                Dr. Kapil Sharma
+                            </h3>
+
+                            <p class="text-sm text-blue-600">
+                                B.A.M.S • General Physician
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     QUICK HIGHLIGHTS
+========================================= -->
+
+<section class="py-16 bg-slate-50">
+
+    <div class="container mx-auto px-6">
+
+        <div class="text-center mb-12 reveal">
+
+            <span class="section-badge">
+                <span>✦</span>
+                Shivansh Clinic Services
+            </span>
+
+            <h2 class="text-3xl md:text-4xl
+                font-extrabold text-slate-900
+                mt-4 mb-4">
+
+                Healthcare by
+                <span class="text-blue-600">
+                    Dr. Kapil Sharma
+                </span>
+
+            </h2>
+
+            <p class="text-gray-500 max-w-2xl mx-auto">
+
+                Explore the healthcare services at
+                <strong>Shivansh Clinic</strong>,
+                led by Dr. Kapil Sharma (B.A.M.S),
+                General Physician.
+
+            </p>
+
+        </div>
+
+
+        <div class="grid sm:grid-cols-2
+            lg:grid-cols-4 gap-6">
+
+
+            <!-- SERVICE -->
+
+            <a href="{% url 'services' %}"
+               class="quick-card reveal">
+
+                <div class="quick-icon">
+                    🩺
+                </div>
+
+                <h3 class="font-bold text-lg text-slate-800">
+                    Dr. Sharma's Services
+                </h3>
+
+                <p class="text-sm text-gray-500 mt-2">
+                    Explore healthcare services provided
+                    at Shivansh Clinic.
+                </p>
+
+                <span class="quick-link">
+                    Explore →
+                </span>
+
+            </a>
+
+
+            <!-- GALLERY -->
+
+            <a href="{% url 'gallery' %}"
+               class="quick-card reveal delay-100">
+
+                <div class="quick-icon">
+                    📷
+                </div>
+
+                <h3 class="font-bold text-lg text-slate-800">
+                    Shivansh Clinic Gallery
+                </h3>
+
+                <p class="text-sm text-gray-500 mt-2">
+                    Explore the clinic environment
+                    and facilities.
+                </p>
+
+                <span class="quick-link">
+                    View Gallery →
+                </span>
+
+            </a>
+
+
+            <!-- TESTIMONIALS -->
+
+            <a href="{% url 'testimonials' %}"
+               class="quick-card reveal delay-200">
+
+                <div class="quick-icon">
+                    💙
+                </div>
+
+                <h3 class="font-bold text-lg text-slate-800">
+                    Patient Experiences
+                </h3>
+
+                <p class="text-sm text-gray-500 mt-2">
+                    Read experiences shared by
+                    clinic patients.
+                </p>
+
+                <span class="quick-link">
+                    Read More →
+                </span>
+
+            </a>
+
+
+            <!-- CONTACT -->
+
+            <a href="{% url 'contact' %}"
+               class="quick-card reveal delay-300">
+
+                <div class="quick-icon">
+                    📍
+                </div>
+
+                <h3 class="font-bold text-lg text-slate-800">
+                    Contact Shivansh Clinic
+                </h3>
+
+                <p class="text-sm text-gray-500 mt-2">
+                    Connect with Dr. Kapil Sharma
+                    and visit our clinic.
+                </p>
+
+                <span class="quick-link">
+                    Get in Touch →
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= SERVICES SECTION ================= -->
+<section class="py-20 bg-slate-50" id="services">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-12 reveal">
+
+            <span class="section-badge">
+                SHIVANSH CLINIC
+            </span>
+
+            <h2 class="section-title mt-3">
+
+                Healthcare by
+                <span class="text-blue-600">
+                    Dr. Kapil Sharma
+                </span>
+
+            </h2>
+
+            <p class="section-subtitle">
+
+                Explore healthcare services at
+                <strong>Shivansh Clinic</strong>,
+                provided by Dr. Kapil Sharma (B.A.M.S),
+                General Physician.
+
+            </p>
+
+        </div>
+
+
+        <div class="grid grid-cols-1
+            sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+
+            <!-- SERVICE 1 -->
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">
+                    🩺
+                </div>
+
+                <h3>
+                    General Consultation
+                </h3>
+
+                <p>
+                    General medical consultation and
+                    health guidance by
+                    <strong>Dr. Kapil Sharma</strong>
+                    at Shivansh Clinic.
+                </p>
+
+                <a href="{% url 'appointment' %}">
+                    Book Appointment →
+                </a>
+
+            </div>
+
+
+            <!-- SERVICE 2 -->
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">
+                    ❤️
+                </div>
+
+                <h3>
+                    Health Checkup
+                </h3>
+
+                <p>
+                    Routine health examinations and
+                    personalized health guidance
+                    from Dr. Kapil Sharma.
+                </p>
+
+                <a href="{% url 'appointment' %}">
+                    Book Appointment →
+                </a>
+
+            </div>
+
+
+            <!-- SERVICE 3 -->
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">
+                    👨‍⚕️
+                </div>
+
+                <h3>
+                    Patient Care
+                </h3>
+
+                <p>
+                    Patient-focused care in a
+                    comfortable and supportive
+                    environment at Shivansh Clinic.
+                </p>
+
+                <a href="{% url 'appointment' %}">
+                    Book Appointment →
+                </a>
+
+            </div>
+
+
+            <!-- SERVICE 4 -->
+
+            <div class="service-card reveal">
+
+                <div class="service-icon">
+                    🧪
+                </div>
+
+                <h3>
+                    Medical Guidance
+                </h3>
+
+                <p>
+                    Personalized medical guidance
+                    and healthcare advice by
+                    Dr. Kapil Sharma (B.A.M.S).
+                </p>
+
+                <a href="{% url 'appointment' %}">
+                    Book Appointment →
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GALLERY SECTION ================= -->
+<section class="py-20 bg-white" id="gallery">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-12 reveal">
+
+            <span class="section-badge">
+                SHIVANSH CLINIC
+            </span>
+
+            <h2 class="section-title mt-3">
+                Shivansh Clinic Gallery
+            </h2>
+
+            <p class="section-subtitle">
+                Explore Shivansh Clinic, its facilities,
+                and the healthcare environment of
+                Dr. Kapil Sharma (B.A.M.S).
+            </p>
+
+        </div>
+
+
+        <div class="gallery-slider-wrapper reveal">
+
+            <div class="gallery-slider" id="gallery-slider">
+
+                <div class="gallery-slide">
+                    <img src="{% static 'images/gallery1.jpg' %}"
+                         alt="Shivansh Clinic Reception">
+                    <div class="gallery-caption">
+                        Shivansh Clinic Reception
+                    </div>
+                </div>
+
+
+                <div class="gallery-slide">
+                    <img src="{% static 'images/gallery2.jpg' %}"
+                         alt="Shivansh Clinic Interior">
+                    <div class="gallery-caption">
+                        Shivansh Clinic Interior
+                    </div>
+                </div>
+
+
+                <div class="gallery-slide">
+                    <img src="{% static 'images/gallery3.jpg' %}"
+                         alt="Dr. Kapil Sharma Consultation Room">
+                    <div class="gallery-caption">
+                        Dr. Kapil Sharma's Consultation Room
+                    </div>
+                </div>
+
+
+                <div class="gallery-slide">
+                    <img src="{% static 'images/gallery4.jpg' %}"
+                         alt="Shivansh Clinic Facilities">
+                    <div class="gallery-caption">
+                        Shivansh Clinic Facilities
+                    </div>
+                </div>
+
+
+                <div class="gallery-slide">
+                    <img src="{% static 'images/gallery5.jpg' %}"
+                         alt="Shivansh Clinic Waiting Area">
+                    <div class="gallery-caption">
+                        Shivansh Clinic Waiting Area
+                    </div>
+                </div>
+
+            </div>
+
+
+            <button class="gallery-arrow gallery-prev"
+                    id="gallery-prev"
+                    aria-label="Previous image">
+
+                &#10094;
+
+            </button>
+
+
+            <button class="gallery-arrow gallery-next"
+                    id="gallery-next"
+                    aria-label="Next image">
+
+                &#10095;
+
+            </button>
+
+        </div>
+
+
+        <div class="gallery-dots" id="gallery-dots">
+
+            <button class="gallery-dot active"
+                    data-index="0"
+                    aria-label="Go to gallery image 1">
+            </button>
+
+            <button class="gallery-dot"
+                    data-index="1"
+                    aria-label="Go to gallery image 2">
+            </button>
+
+            <button class="gallery-dot"
+                    data-index="2"
+                    aria-label="Go to gallery image 3">
+            </button>
+
+            <button class="gallery-dot"
+                    data-index="3"
+                    aria-label="Go to gallery image 4">
+            </button>
+
+            <button class="gallery-dot"
+                    data-index="4"
+                    aria-label="Go to gallery image 5">
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FIND US SECTION ================= -->
+<section class="py-20 bg-slate-50" id="location">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-12 reveal">
+
+            <span class="section-badge">
+                SHIVANSH CLINIC
+            </span>
+
+            <h2 class="section-title mt-3">
+                Visit Dr. Kapil Sharma
+            </h2>
+
+            <p class="section-subtitle">
+
+                Visit Shivansh Clinic for professional
+                and compassionate healthcare by
+                Dr. Kapil Sharma (B.A.M.S).
+
+            </p>
+
+        </div>
+
+
+        <div class="location-grid">
+
+
+            <!-- MAP -->
+
+            <div class="map-container reveal">
+
+                <!-- Replace AIIMS Rishikesh with actual clinic location -->
+
+                <iframe
+                    src="https://www.google.com/maps?q=AIIMS+Rishikesh&output=embed"
+                    width="100%"
+                    height="430"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+
+            </div>
+
+
+            <!-- LOCATION INFORMATION -->
+
+            <div class="location-info reveal">
+
+                <span class="section-badge">
+                    VISIT SHIVANSH CLINIC
+                </span>
+
+
+                <h3>
+                    Meet Dr. Kapil Sharma
+                </h3>
+
+
+                <p>
+
+                    <strong>Shivansh Clinic</strong> is dedicated
+                    to providing comfortable and personalized
+                    healthcare under the guidance of
+                    <strong>Dr. Kapil Sharma (B.A.M.S)</strong>,
+                    General Physician.
+
+                </p>
+
+
+                <div class="location-detail">
+
+                    <span>📍</span>
+
+                    <div>
+
+                        <strong>
+                            Clinic Address
+                        </strong>
+
+                        <p>
+
+                            Shisham Jhari Muni KI Reti,<br>
+                            Rishikesh, Uttarakhand
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="location-detail">
+
+                    <span>👨‍⚕️</span>
+
+                    <div>
+
+                        <strong>
+                            Doctor
+                        </strong>
+
+                        <p>
+
+                            Dr. Kapil Sharma<br>
+                            B.A.M.S • General Physician
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="location-detail">
+
+                    <span>📞</span>
+
+                    <div>
+
+                        <strong>
+                            Phone
+                        </strong>
+
+                        <p>
+                            +91 81264 82283
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="location-detail">
+
+                    <span>🕒</span>
+
+                    <div>
+
+                        <strong>
+                            Opening Hours
+                        </strong>
+
+                        <p>
+
+                            Monday – Saturday<br>
+                            9:00 AM – 6:00 PM
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=AIIMS+Rishikesh"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="location-button">
+
+                    Get Directions →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     APPOINTMENT CTA
+========================================= -->
+
+<section class="cta-section relative overflow-hidden
+    py-20 md:py-24">
+
+    <div class="cta-orb"></div>
+
+    <div class="relative container mx-auto
+        px-6 text-center text-white reveal">
+
+        <span class="text-blue-200 font-semibold text-sm
+            uppercase tracking-wider">
+
+            Shivansh Clinic • Dr. Kapil Sharma
+
+        </span>
+
+
+        <h2 class="text-3xl md:text-5xl
+            font-extrabold mt-4 mb-6">
+
+            Take the Next Step Towards
+            <span class="text-cyan-200">
+                Better Health
+            </span>
+
+        </h2>
+
+
+        <p class="text-blue-100 max-w-2xl
+            mx-auto text-lg mb-9">
+
+            Schedule your appointment with
+            <strong>Dr. Kapil Sharma (B.A.M.S)</strong>,
+            General Physician at
+            <strong>Shivansh Clinic</strong>.
+
+            Your health and comfort matter to us.
+
+        </p>
+
+
+        <a href="{% url 'appointment' %}"
+           class="hero-primary-btn">
+
+            Book Appointment with Dr. Sharma
+            <span>→</span>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+{% endblock %}
+
+
+<!-- =========================================
+     HOME PAGE JAVASCRIPT
+========================================= -->
+
+{% block extra_js %}
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* =====================================
+       HERO SLIDER
+    ===================================== */
+
+    const slider = document.getElementById("hero-slider");
+    const slides = slider.querySelectorAll(":scope > div");
+    const dots = document.querySelectorAll(".hero-dot");
+
+    const prevBtn = document.getElementById("hero-prev");
+    const nextBtn = document.getElementById("hero-next");
+
+    let currentIndex = 0;
+    let autoSlide;
+
+    const totalSlides = slides.length;
+
+
+    function updateSlider(index) {
+
+        currentIndex = (index + totalSlides) % totalSlides;
+
+        slider.style.transform =
+            `translateX(-${currentIndex * 100}%)`;
+
+        dots.forEach((dot, i) => {
+
+            dot.classList.toggle(
+                "active",
+                i === currentIndex
+            );
+
+            dot.setAttribute(
+                "aria-current",
+                i === currentIndex ? "true" : "false"
+            );
+
+        });
+
+    }
+
+
+    function nextSlide() {
+        updateSlider(currentIndex + 1);
+    }
+
+
+    function previousSlide() {
+        updateSlider(currentIndex - 1);
+    }
+
+
+    function startAutoSlide() {
+
+        stopAutoSlide();
+
+        autoSlide = setInterval(nextSlide, 6000);
+
+    }
+
+
+    function stopAutoSlide() {
+
+        if (autoSlide) {
+            clearInterval(autoSlide);
+        }
+
+    }
+
+
+    nextBtn.addEventListener("click", () => {
+
+        nextSlide();
+        startAutoSlide();
+
+    });
+
+
+    prevBtn.addEventListener("click", () => {
+
+        previousSlide();
+        startAutoSlide();
+
+    });
+
+
+    dots.forEach(dot => {
+
+        dot.addEventListener("click", () => {
+
+            updateSlider(Number(dot.dataset.index));
+            startAutoSlide();
+
+        });
+
+    });
+
+
+    slider.parentElement.addEventListener(
+        "mouseenter",
+        stopAutoSlide
+    );
+
+    slider.parentElement.addEventListener(
+        "mouseleave",
+        startAutoSlide
+    );
+
+
+    // Keyboard navigation
+
+    document.addEventListener("keydown", (event) => {
+
+        if (event.key === "ArrowLeft") {
+            previousSlide();
+            startAutoSlide();
+        }
+
+        if (event.key === "ArrowRight") {
+            nextSlide();
+            startAutoSlide();
+        }
+
+    });
+
+
+    // Initialize
+
+    updateSlider(0);
+    startAutoSlide();
+
+
+    /* =====================================
+       SCROLL REVEAL
+    ===================================== */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+
+    if ("IntersectionObserver" in window) {
+
+        const observer = new IntersectionObserver(
+            (entries, observer) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("active");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12,
+                rootMargin: "0px 0px -40px 0px"
+            }
+        );
+
+
+        revealElements.forEach(element => {
+            observer.observe(element);
+        });
+
+    } else {
+
+        revealElements.forEach(element => {
+            element.classList.add("active");
+        });
+
+    }
+
+});
+
+    // ================= GALLERY SLIDER =================
+
+    const gallerySlider = document.getElementById("gallery-slider");
+    const galleryPrev = document.getElementById("gallery-prev");
+    const galleryNext = document.getElementById("gallery-next");
+    const galleryDots = document.querySelectorAll(".gallery-dot");
+
+    let galleryIndex = 0;
+    const galleryTotal = 5;
+
+    function updateGallery() {
+        gallerySlider.style.transform =
+            `translateX(-${galleryIndex * 100}%)`;
+
+        galleryDots.forEach((dot, index) => {
+            dot.classList.toggle(
+                "active",
+                index === galleryIndex
+            );
+        });
+    }
+
+    function nextGallery() {
+        galleryIndex = (galleryIndex + 1) % galleryTotal;
+        updateGallery();
+    }
+
+    function previousGallery() {
+        galleryIndex =
+            (galleryIndex - 1 + galleryTotal) % galleryTotal;
+
+        updateGallery();
+    }
+
+    galleryNext.addEventListener("click", nextGallery);
+    galleryPrev.addEventListener("click", previousGallery);
+
+    galleryDots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+            galleryIndex = Number(dot.dataset.index);
+            updateGallery();
+        });
+    });
+
+    // Automatic slide every 4 seconds
+    setInterval(nextGallery, 4000);
+
+</script>
+
+{% endblock %}

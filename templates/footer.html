@@ -1,0 +1,241 @@
+
+<footer class="clinic-footer">
+
+    <style>
+        .clinic-footer {
+            position: relative;
+            margin-top: 80px;
+            background: #0f172a;
+            color: white;
+            overflow: hidden;
+        }
+
+        .clinic-footer::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            right: -120px;
+            top: -150px;
+            border-radius: 50%;
+            background: rgba(14, 165, 233, 0.12);
+        }
+
+        .footer-container {
+            position: relative;
+            max-width: 1200px;
+            margin: auto;
+            padding: 60px 24px 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1.2fr;
+            gap: 45px;
+        }
+
+        .footer-brand {
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 18px;
+            color: white;
+        }
+
+        .footer-brand span {
+            color: #38bdf8;
+        }
+
+        .footer-description {
+            max-width: 340px;
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .footer-hours {
+            color: #cbd5e1;
+            font-size: 13px;
+        }
+
+        .footer-heading {
+            color: white;
+            font-size: 18px;
+            font-weight: 750;
+            margin-bottom: 22px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 13px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #38bdf8;
+            padding-left: 6px;
+        }
+
+        .footer-contact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 18px;
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .footer-contact-icon {
+            color: #38bdf8;
+            font-size: 17px;
+        }
+
+        .footer-contact a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            color: #38bdf8;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            border-top: 1px solid #1e293b;
+            margin-top: 45px;
+            padding-top: 22px;
+            color: #64748b;
+            font-size: 12px;
+        }
+
+        .footer-bottom a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            color: #38bdf8;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-container {
+                padding-top: 45px;
+            }
+        }
+    </style>
+
+    <div class="footer-container">
+
+        <div class="footer-grid">
+
+            <!-- Clinic Information -->
+            <div>
+                <h3 class="footer-brand">
+                    Clinic <span>Name</span>
+                </h3>
+
+                <p class="footer-description">
+                    Providing compassionate and professional healthcare
+                    services with a patient-first approach.
+                </p>
+
+                <p class="footer-hours">
+                    🕒 Monday - Saturday: 9:00 AM - 7:00 PM
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="footer-heading">Quick Links</h3>
+
+                <ul class="footer-links">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About Doctor</a></li>
+                    <li><a href="{% url 'services' %}">Our Services</a></li>
+                    <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                    <li><a href="{% url 'appointment' %}">Book Appointment</a></li>
+                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Information -->
+            <div>
+                <h3 class="footer-heading">Contact Us</h3>
+
+                <ul class="footer-contact">
+
+                    <li>
+                        <span class="footer-contact-icon">📍</span>
+                        <span>
+                            Your Full Clinic Address,<br>
+                            Rishikesh, Uttarakhand
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="footer-contact-icon">📞</span>
+                        <span>
+                            <a href="tel:+918126482283">
+                                +91 81264 82283
+                            </a>
+                        </span>
+                    </li>
+
+                    <li>
+                        <span class="footer-contact-icon">✉</span>
+                        <span>
+                            <a href="mailto:info@clinicname.com">
+                                info@clinicname.com
+                            </a>
+                        </span>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                © 2026 Clinic Name. All rights reserved.
+            </p>
+
+            <p>
+                Designed with care for better healthcare.
+            </p>
+        </div>
+
+    </div>
+
+</footer>

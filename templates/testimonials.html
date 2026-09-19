@@ -1,0 +1,265 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Testimonials | Clinic Name{% endblock %}
+
+{% block content %}
+
+<style>
+    .testimonials-page {
+        padding: 75px 20px 90px;
+        background: linear-gradient(135deg, #f0f9ff, #ffffff);
+    }
+
+    .testimonials-header {
+        max-width: 700px;
+        margin: auto auto 50px;
+        text-align: center;
+        animation: testimonialDown 0.8s ease;
+    }
+
+    .testimonials-header h1 {
+        color: #0f172a;
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        font-weight: 800;
+        margin-top: 15px;
+    }
+
+    .testimonials-header p {
+        color: #64748b;
+        line-height: 1.8;
+        margin-top: 15px;
+    }
+
+    .testimonials-grid {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .testimonial-card {
+        position: relative;
+        padding: 32px 27px;
+        border: 1px solid #e2e8f0;
+        border-radius: 22px;
+        background: white;
+        box-shadow: 0 8px 25px rgba(15,23,42,0.05);
+        transition: all 0.35s ease;
+        animation: testimonialUp 0.8s ease both;
+    }
+
+    .testimonial-card:nth-child(2) {
+        animation-delay: 0.15s;
+    }
+
+    .testimonial-card:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 18px 40px rgba(15,23,42,0.11);
+        border-color: #7dd3fc;
+    }
+
+    .quote-icon {
+        color: #bae6fd;
+        font-size: 55px;
+        font-family: Georgia, serif;
+        font-weight: 800;
+        line-height: 1;
+        margin-bottom: 15px;
+    }
+
+    .testimonial-stars {
+        color: #f59e0b;
+        letter-spacing: 3px;
+        font-size: 15px;
+        margin-bottom: 18px;
+    }
+
+    .testimonial-card blockquote {
+        color: #64748b;
+        font-size: 14px;
+        line-height: 1.9;
+        font-style: italic;
+        margin-bottom: 25px;
+    }
+
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border-top: 1px solid #f1f5f9;
+        padding-top: 20px;
+    }
+
+    .author-avatar {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #e0f2fe;
+        color: #0369a1;
+        font-weight: 800;
+    }
+
+    .testimonial-author strong {
+        display: block;
+        color: #0f172a;
+        font-size: 14px;
+    }
+
+    .testimonial-author span {
+        display: block;
+        color: #94a3b8;
+        font-size: 12px;
+        margin-top: 3px;
+    }
+
+    @keyframes testimonialDown {
+        from {
+            opacity: 0;
+            transform: translateY(-25px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes testimonialUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 900px) {
+        .testimonials-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .testimonials-page {
+            padding: 45px 15px 65px;
+        }
+
+        .testimonials-grid {
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+    }
+</style>
+
+<section class="testimonials-page">
+
+    <div class="testimonials-header">
+
+        <span class="section-badge">PATIENT FEEDBACK</span>
+
+        <h1>What Our Patients Say</h1>
+
+        <p>
+            Patient experiences and feedback help us continue
+            improving our healthcare services.
+        </p>
+
+    </div>
+
+    <div class="testimonials-grid">
+
+        <article class="testimonial-card">
+
+            <div class="quote-icon">“</div>
+
+            <div class="testimonial-stars"
+                 aria-label="Sample five-star rating">
+                ★★★★★
+            </div>
+
+            <blockquote>
+                "Excellent care and very professional.
+                The doctor listened carefully and explained
+                everything clearly."
+            </blockquote>
+
+            <div class="testimonial-author">
+                <div class="author-avatar">P</div>
+
+                <div>
+                    <strong>Patient Name</strong>
+                    <span>Sample Review</span>
+                </div>
+            </div>
+
+        </article>
+
+        <article class="testimonial-card">
+
+            <div class="quote-icon">“</div>
+
+            <div class="testimonial-stars"
+                 aria-label="Sample five-star rating">
+                ★★★★★
+            </div>
+
+            <blockquote>
+                "The clinic environment was comfortable
+                and the staff was helpful throughout
+                my visit."
+            </blockquote>
+
+            <div class="testimonial-author">
+                <div class="author-avatar">P</div>
+
+                <div>
+                    <strong>Patient Name</strong>
+                    <span>Sample Review</span>
+                </div>
+            </div>
+
+        </article>
+
+        <article class="testimonial-card">
+
+            <div class="quote-icon">“</div>
+
+            <div class="testimonial-stars"
+                 aria-label="Sample five-star rating">
+                ★★★★★
+            </div>
+
+            <blockquote>
+                "The doctor explained the treatment clearly
+                and made me feel comfortable during
+                the consultation."
+            </blockquote>
+
+            <div class="testimonial-author">
+                <div class="author-avatar">P</div>
+
+                <div>
+                    <strong>Patient Name</strong>
+                    <span>Sample Review</span>
+                </div>
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+{% endblock %}

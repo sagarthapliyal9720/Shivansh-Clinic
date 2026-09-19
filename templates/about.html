@@ -1,0 +1,341 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Dr. Kapil Sharma | Shivansh Clinic{% endblock %}
+
+{% block content %}
+
+<style>
+    .about-page {
+        background: linear-gradient(135deg, #f0f9ff, #ffffff);
+    }
+
+    .about-hero {
+        position: relative;
+        padding: 80px 20px 45px;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .about-hero h1 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 800;
+        color: #0f172a;
+        animation: fadeDown 0.8s ease;
+    }
+
+    .about-hero p {
+        color: #64748b;
+        margin-top: 12px;
+        animation: fadeUp 1s ease;
+    }
+
+    .about-wrapper {
+        max-width: 1150px;
+        margin: auto;
+        padding: 35px 20px 90px;
+    }
+
+    .doctor-image-card {
+        position: relative;
+        min-height: 430px;
+        border-radius: 28px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #dbeafe, #bae6fd);
+        box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+        animation: fadeLeft 1s ease;
+    }
+
+    .doctor-image-card img {
+        width: 100%;
+        height: 430px;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+
+    .doctor-image-card:hover img {
+        transform: scale(1.05);
+    }
+
+    .doctor-image-placeholder {
+        height: 430px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #64748b;
+        font-size: 18px;
+    }
+
+    .doctor-badge {
+        position: absolute;
+        bottom: 22px;
+        left: 22px;
+        right: 22px;
+        padding: 18px;
+        border-radius: 16px;
+        background: rgba(255,255,255,0.94);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 25px rgba(15,23,42,0.12);
+    }
+
+    .doctor-badge strong {
+        display: block;
+        color: #0f172a;
+        font-size: 17px;
+    }
+
+    .doctor-badge span {
+        color: #0284c7;
+        font-size: 13px;
+    }
+
+    .doctor-content {
+        animation: fadeRight 1s ease;
+    }
+
+    .doctor-content h2 {
+        color: #0f172a;
+        font-size: 32px;
+        font-weight: 800;
+        margin-bottom: 8px;
+    }
+
+    .doctor-specialization {
+        color: #0284c7;
+        font-weight: 700;
+        margin-bottom: 22px;
+    }
+
+    .doctor-content p {
+        color: #64748b;
+        line-height: 1.9;
+        margin-bottom: 18px;
+    }
+
+    .info-heading {
+        color: #0f172a;
+        font-size: 20px;
+        font-weight: 750;
+        margin-top: 28px;
+        margin-bottom: 12px;
+    }
+
+    .qualification-list {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        gap: 10px;
+    }
+
+    .qualification-list li {
+        padding: 12px 15px;
+        border-radius: 10px;
+        background: #f0f9ff;
+        color: #475569;
+        border-left: 4px solid #0284c7;
+    }
+
+    .about-cta {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 14px 25px;
+        border-radius: 12px;
+        background: #0284c7;
+        color: white;
+        font-weight: 700;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .about-cta:hover {
+        background: #0369a1;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(2,132,199,0.3);
+    }
+
+    @keyframes fadeDown {
+        from { opacity: 0; transform: translateY(-25px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(25px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeLeft {
+        from { opacity: 0; transform: translateX(-35px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes fadeRight {
+        from { opacity: 0; transform: translateX(35px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+
+    @media (max-width: 768px) {
+        .about-hero {
+            padding-top: 50px;
+        }
+
+        .doctor-image-card,
+        .doctor-image-card img,
+        .doctor-image-placeholder {
+            min-height: 320px;
+            height: 320px;
+        }
+
+        .doctor-content h2 {
+            font-size: 27px;
+        }
+    }
+</style>
+
+<section class="about-page">
+
+    <div class="about-hero">
+
+        <h1>
+            About Dr. Kapil Sharma
+        </h1>
+
+        <p>
+            Meet the physician behind Shivansh Clinic
+        </p>
+
+    </div>
+
+
+    <div class="about-wrapper">
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+
+
+            <!-- Doctor Image -->
+
+            <div class="doctor-image-card">
+
+                <img src="{% static 'images/doctor.jpg' %}"
+                     alt="Dr. Kapil Sharma - Shivansh Clinic"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+                <div class="doctor-image-placeholder"
+                     style="display:none;">
+
+                    Doctor Photo
+
+                </div>
+
+
+                <div class="doctor-badge">
+
+                    <strong>
+                        Dr. Kapil Sharma
+                    </strong>
+
+                    <span>
+                        B.A.M.S • General Physician
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Doctor Information -->
+
+            <div class="doctor-content">
+
+                <span class="section-badge">
+                    MEET OUR DOCTOR
+                </span>
+
+
+                <h2>
+                    Dr. Kapil Sharma
+                </h2>
+
+
+                <div class="doctor-specialization">
+
+                    B.A.M.S • General Physician
+                    <br>
+                    Shivansh Clinic
+
+                </div>
+
+
+                <p>
+
+                    Dr. Kapil Sharma is a General Physician
+                    at <strong>Shivansh Clinic</strong>,
+                    committed to providing patient-focused
+                    healthcare with care, respect and
+                    personal attention.
+
+                </p>
+
+
+                <p>
+
+                    At Shivansh Clinic, our focus is to
+                    create a comfortable environment where
+                    patients can discuss their healthcare
+                    concerns.
+
+                </p>
+
+
+                <h3 class="info-heading">
+                    Qualification
+                </h3>
+
+
+                <ul class="qualification-list">
+
+                    <li>
+                        ✓ B.A.M.S
+                    </li>
+
+                    <li>
+                        ✓ General Physician
+                    </li>
+
+                    <li>
+                        ✓ Patient-Focused Healthcare
+                    </li>
+
+                </ul>
+
+
+                <h3 class="info-heading">
+                    About Shivansh Clinic
+                </h3>
+
+
+                <p>
+
+                    Shivansh Clinic aims to provide a
+                    welcoming healthcare environment
+                    under the guidance of
+                    Dr. Kapil Sharma.
+
+                </p>
+
+
+                <a href="{% url 'appointment' %}"
+                   class="about-cta">
+
+                    Book an Appointment →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

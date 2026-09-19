@@ -1,0 +1,284 @@
+
+<header class="clinic-header">
+
+    <style>
+        .clinic-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.94);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: auto;
+            padding: 0 24px;
+        }
+
+        .header-inner {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .clinic-logo {
+            color: #0369a1;
+            font-size: 25px;
+            font-weight: 800;
+            text-decoration: none;
+            letter-spacing: -0.7px;
+            white-space: nowrap;
+            transition: color 0.3s ease;
+        }
+
+        .clinic-logo span {
+            color: #0f172a;
+        }
+
+        .clinic-logo:hover {
+            color: #0284c7;
+        }
+
+        .desktop-navigation {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .desktop-navigation a {
+            position: relative;
+            color: #475569;
+            font-size: 13px;
+            font-weight: 650;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .desktop-navigation a:not(.header-cta)::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 0;
+            height: 2px;
+            background: #0284c7;
+            transition: width 0.3s ease;
+        }
+
+        .desktop-navigation a:hover {
+            color: #0284c7;
+        }
+
+        .desktop-navigation a:hover::after {
+            width: 100%;
+        }
+
+        .header-cta {
+            padding: 12px 19px;
+            border-radius: 10px;
+            background: #0284c7;
+            color: white !important;
+            box-shadow: 0 5px 15px rgba(2,132,199,0.18);
+            transition: all 0.3s ease !important;
+        }
+
+        .header-cta:hover {
+            background: #0369a1;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(2,132,199,0.3);
+        }
+
+        .mobile-menu-button {
+            display: none;
+            width: 42px;
+            height: 42px;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            background: white;
+            color: #334155;
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            padding: 10px 0 20px;
+            animation: menuSlide 0.3s ease;
+        }
+
+        .mobile-menu.open {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 12px 14px;
+            border-radius: 8px;
+            color: #475569;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            background: #f0f9ff;
+            color: #0284c7;
+            padding-left: 20px;
+        }
+
+        .mobile-menu .mobile-cta {
+            margin-top: 10px;
+            background: #0284c7;
+            color: white;
+            text-align: center;
+        }
+
+        @keyframes menuSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 1100px) {
+            .desktop-navigation {
+                gap: 14px;
+            }
+
+            .desktop-navigation a {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .desktop-navigation {
+                display: none;
+            }
+
+            .mobile-menu-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-container {
+                padding: 0 16px;
+            }
+
+            .clinic-logo {
+                font-size: 21px;
+            }
+        }
+    </style>
+
+    <div class="header-container">
+
+        <div class="header-inner">
+
+            <!-- Logo -->
+            <a href="{% url 'home' %}" class="clinic-logo">
+              <a href="{% url 'home' %}" class="clinic-logo">
+
+    Shivansh <span>Clinic</span>
+
+</a>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-navigation">
+
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'about' %}">
+        Dr. Kapil Sharma
+    </a>
+                <a href="{% url 'services' %}">Services</a>
+                <a href="{% url 'gallery' %}">Gallery</a>
+                <a href="{% url 'testimonials' %}">Testimonials</a>
+                <a href="{% url 'contact' %}">Contact</a>
+
+                <a href="{% url 'appointment' %}" class="header-cta">
+                    Book Appointment
+                </a>
+
+            </nav>
+
+            <!-- Mobile Button -->
+            <button
+                id="menu-btn"
+                class="mobile-menu-button"
+                aria-label="Open navigation menu"
+                aria-expanded="false">
+
+                <svg id="menu-icon"
+                     width="23"
+                     height="23"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2">
+                    <path d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+
+            </button>
+
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav id="mobile-menu" class="mobile-menu">
+
+            <a href="{% url 'home' %}">Home</a>
+             <a href="{% url 'about' %}">
+        Dr. Kapil Sharma
+    </a>
+            <a href="{% url 'services' %}">Services</a>
+            <a href="{% url 'gallery' %}">Gallery</a>
+            <a href="{% url 'testimonials' %}">Testimonials</a>
+            <a href="{% url 'contact' %}">Contact</a>
+
+            <a href="{% url 'appointment' %}" class="mobile-cta">
+                Book Appointment
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<script>
+    const menuButton = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuButton.addEventListener("click", () => {
+
+        const isOpen = mobileMenu.classList.toggle("open");
+
+        menuButton.setAttribute("aria-expanded", isOpen);
+
+        menuButton.innerHTML = isOpen
+            ? "&#10005;"
+            : `<svg width="23" height="23" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="2">
+                 <path d="M4 6h16M4 12h16M4 18h16"/>
+               </svg>`;
+    });
+
+    // Close mobile menu after selecting a link
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+            mobileMenu.classList.remove("open");
+            menuButton.setAttribute("aria-expanded", "false");
+        });
+    });
+</script>
